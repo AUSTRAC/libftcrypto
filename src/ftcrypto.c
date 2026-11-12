@@ -296,7 +296,7 @@ ft_error ft_array_to_bytes(
     const_ft_ge25519_array array)
 {
     size_t max_elts = n_bytes / FT_FOLDED_POINT_BYTES;
-    if (max_elts > array->n_elts)
+    if (max_elts < array->n_elts)
         return FT_ERR_INSUFFICIENT_SPACE;
 
     for (size_t i = 0; i < array->n_elts; ++i) {
